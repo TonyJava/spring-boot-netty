@@ -18,4 +18,6 @@ public interface IBaseMsg {
    void setAreaType(Integer areaType);
 
    void setTransCode(String transCode);
+
+   void setSerialNo(String serialNo);
 }

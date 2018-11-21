@@ -15,6 +15,7 @@ public class MsgHandler extends BaseMsg{
             logger.warn("请求报文不能为空");
             return null;
         }
+        serialNo = jsonObject.getString(APP_REQNO);
         transCode = jsonObject.getString(APP_TRANSCODE);
         jsonObjectData = jsonObject.getJSONObject(APP_DATA);
         if(jsonObjectData == null){
@@ -27,6 +28,7 @@ public class MsgHandler extends BaseMsg{
         IBaseMsg iBaseMsg = Factory.getInstance(transCode);
         if(iBaseMsg != null){
             iBaseMsg.parseReq(jsonObject);
+            iBaseMsg.setSerialNo(serialNo);
             iBaseMsg.setOrgId(orgId);
             iBaseMsg.setUserId(userId);
             iBaseMsg.setAreaType(areaType);

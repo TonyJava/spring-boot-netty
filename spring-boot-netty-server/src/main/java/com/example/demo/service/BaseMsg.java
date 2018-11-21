@@ -13,8 +13,11 @@ public class BaseMsg {
     protected static final String APP_DATA = "data";
     protected static final String APP_MSG = "successMsg";
     protected static final String APP_USERINFO = "userInfo";
+    protected static final String APP_REQNO = "serialNo";
 //    protected static final String APP_ERRORMSG = "errorMsg";
 
+    /*序列号*/
+    protected String serialNo;
     /*机构id*/
     protected String orgId;
     /*用户id*/
@@ -36,6 +39,7 @@ public class BaseMsg {
         msg.put(APP_ORGID,orgId);
         msg.put(APP_AREATYPE,areaType);
         msg.put(APP_TRANSCODE,transCode);
+        msg.put(APP_REQNO,serialNo);
     }
 
     public Integer getAreaType() {
@@ -68,5 +72,13 @@ public class BaseMsg {
 
     public void setTransCode(String transCode) {
         this.transCode = transCode;
+    }
+
+    public String getSerialNo() {
+        return serialNo;
+    }
+
+    public void setSerialNo(String serialNo) {
+        this.serialNo = serialNo;
     }
 }
